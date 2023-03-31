@@ -1,4 +1,4 @@
-class Contacts {
+class Contact {
 
     constructor(firstName, lastName, address, city, state, zip, phoneNumber, email) {
         this.firstName = firstName;

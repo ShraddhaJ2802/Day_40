@@ -53,10 +53,10 @@ class Contacts{
         return this._city;
     }
     set state(state) {
-        let pattern = RegExp('^[A-Za-z]{4,}$');
+        let pattern = RegExp('^[A-Za-z]{10,}$');
         if(pattern.test(state)) {
             this._state = state;
-        } else throw "State Must have 4 Charactes";
+        } else throw "State Must have 10 Charactes";
     }
     get state() {
         return this._state;
@@ -144,3 +144,30 @@ function printArray() {
         console.log(arr[i].toString());
     }
 }
+
+deleteContacts();
+function deleteContacts() {
+    let firstNamedelete = prompt4("Enter the First Name you like to delete:");
+    let check = false;
+    check = contactChecker(firstNamedelete, check);
+    if (check) {
+        console.log("Sorry there is no name with this first name.");
+    } else {
+        console.log("Contact is deleted sucessfully!")
+    }
+
+}
+function contactChecker(firstNamedelete, check) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i]._firstName == firstNamedelete) {
+            check = false;
+            console.log("Print matched: " + arr[i].toString());
+            let deleted = arr.splice(i, 1);
+            console.log("Deleted element: " + deleted);
+            return check;
+        }
+        return check;
+    }
+
+}
+printArray();
