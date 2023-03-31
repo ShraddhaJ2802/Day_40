@@ -181,3 +181,29 @@ function countContacts(){
     return arr.map(contact => contact._firstName)
     .reduce((start,firstName)=>start+=1,0);
 }
+
+searchPersonthroughCityorstate();
+function searchPersonthroughCityorstate() {
+    let parameter = prompt4("Select Search Parameter 1. City 2. State :");
+    if(parameter == 1) {
+        let city = prompt4("Enter the City to Search Person :");
+        console.log(arr.filter(contact => contact._city == city).map(contact => contact));
+    } else {
+        let state = prompt4("Enter the State to Search Person :");
+        console.log(arr.filter(contact => contact._state == state).map(contact => contact));
+    }
+}
+
+
+//Search By City Or State
+searchPersonthroughCityorstate();
+function searchPersonthroughCityorstate() {
+    let parameter = prompt4("Select Search Parameter 1. City 2. State :");
+    if(parameter == 1) {
+        let city = prompt4("Enter the City to Search Person :");
+        console.log(arr.filter(contact => contact._city == city).map(contact => contact));
+    } else {
+        let state = prompt4("Enter the State to Search Person :");
+        console.log(arr.filter(contact => contact._state == state).map(contact => contact));
+    }
+}
